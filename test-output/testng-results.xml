@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="48820" started-at="2020-04-10T09:25:15Z" finished-at="2020-04-10T09:26:03Z">
+    <groups>
+      <group name="cucumber">
+        <method signature="MyRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.MyRunner@6a01e23]" name="feature" class="MyRunner.MyRunner"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="Default test" duration-ms="48820" started-at="2020-04-10T09:25:15Z" finished-at="2020-04-10T09:26:03Z">
+      <class name="MyRunner.MyRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:MyRunner.MyRunner@6a01e23]" name="setUpClass" is-config="true" duration-ms="1065" started-at="2020-04-10T14:55:15Z" finished-at="2020-04-10T14:55:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.MyRunner@6a01e23]" name="feature" duration-ms="47274" started-at="2020-04-10T14:55:16Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-04-10T14:56:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Deals Page feature]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:MyRunner.MyRunner@6a01e23]" name="tearDownClass" is-config="true" duration-ms="126" started-at="2020-04-10T14:56:03Z" finished-at="2020-04-10T14:56:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- MyRunner.MyRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
