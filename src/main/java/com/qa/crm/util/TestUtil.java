@@ -2,6 +2,9 @@ package com.qa.crm.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -26,11 +29,18 @@ public class TestUtil extends TestBase{
 	//TakeScreenshot
 	public static String takeScreensotAtEndOfTest(WebDriver driver) throws IOException {
 		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		String path = System.getProperty("user.dir") + "/screenshots/"+System.currentTimeMillis()+".png";
+		String path = System.getProperty("user.dir") + "/screenshots/"+TestUtil.getCurrentDateTime()+".png";
 		FileUtils.copyFile(srcFile , new File(path));
 		return path;
 	}
 	
+	
+	//getCurrentDateTime
+	public static String getCurrentDateTime() {
+		DateFormat customFormat = new SimpleDateFormat("MM_dd_yyyy_HH_mm_ss");
+		Date currentDate = new Date();
+		return customFormat.format(currentDate);
+	}
 	//explicit wait
 	public static boolean isDisplayed(WebElement webElement) {
 		WebDriverWait wait = new WebDriverWait(driver, 50);

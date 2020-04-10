@@ -1,16 +1,19 @@
 package com.qa.crm.testcases;
 
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import java.io.IOException;
+
+import org.testng.ITestResult;
 
 import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.DealsPage;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
 
+
 import cucumber.api.DataTable;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
@@ -23,17 +26,36 @@ public class DealsTestCase extends TestBase {
 		super();
 	}
 	
-	@BeforeTest
+//	@BeforeClass
+//	public void setUp1(String TestCaseName) {
+//		Reporter.log("Started");
+//		ExtentHtmlReporter reporter = new ExtentHtmlReporter(new File(System.getProperty("user.dir") + "/Reports/" + System.currentTimeMillis()+".html"));
+//		extent = new ExtentReports();
+//		extent.attachReporter(reporter);
+//		//extent.createTest("Deal Test");
+//		logger = extent.createTest(TestCaseName);
+//	}
+	
+	
+//	@BeforeSuite
+//	public void setUp1() {
+//		setUpSuite("Deals Validation Test");
+//	}
+	
+	@Before
 	public void setUp() {
+		setUpSuite("DealsTestCase");
 		initialisation();
 	}
-		
+	
+	
 	@Given("^User moves to new deals page$")
 	public void user_moves_to_new_deals_page() {
 	    loginPage = new LoginPage();
 		dealspage=new DealsPage();
 		homePage = new HomePage();
-	    loginPage.logintoFreeCRM(prop.getProperty("email"), prop.getProperty("pwd"));
+		
+		loginPage.logintoFreeCRM(prop.getProperty("email"), prop.getProperty("pwd"));
 		HomePage.clickOnDealsLink();
 		dealspage.user_moves_to_new_deals_page();
 	}
@@ -42,12 +64,12 @@ public class DealsTestCase extends TestBase {
 	@Then("^User enters deals details$")
 	public void user_enters_deals_details(DataTable details) throws InterruptedException {
 		dealspage.user_enters_deals_details(details);
+		driver.quit();
 	    
 	}
-
-	@AfterTest
-	public void tearDown() {
-		driver.quit();
+	
+	@After
+	public void User_Closes_The_Report() throws IOException {
+		DealsPage.tearDownReport();
 	}
-
 }

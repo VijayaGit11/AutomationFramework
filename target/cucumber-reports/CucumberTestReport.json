@@ -1,0 +1,91 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 24768638200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DealsTestCase.setUp()"
+            }
+          }
+        ],
+        "line": 5,
+        "name": "Deals page Scenario",
+        "description": "",
+        "id": "deals-page-feature;deals-page-scenario",
+        "after": [
+          {
+            "result": {
+              "duration": 2250272100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DealsTestCase.User_Closes_The_Report()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 10230942000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User moves to new deals page",
+            "match": {
+              "location": "DealsTestCase.user_moves_to_new_deals_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 13902059400,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User enters deals details",
+            "match": {
+              "location": "DealsTestCase.user_enters_deals_details(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Title",
+                  "Description"
+                ],
+                "line": 8
+              },
+              {
+                "cells": [
+                  "Mrs",
+                  "Free CRM Description1"
+                ],
+                "line": 9
+              },
+              {
+                "cells": [
+                  "Mrs",
+                  "Free CRM Description2"
+                ],
+                "line": 10
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Deals Page feature",
+    "description": "\r\nDescription: This feature validates deals page",
+    "id": "deals-page-feature",
+    "keyword": "Feature",
+    "uri": "C:/Users/HP/Documents/Framework/FreeCRMTestAutomation/src/test/java/features/DealsPage.feature"
+  }
+]

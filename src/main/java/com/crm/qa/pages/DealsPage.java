@@ -1,14 +1,17 @@
 package com.crm.qa.pages;
 
+import java.io.IOException;
 import java.util.Map;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.ITestResult;
 
 import com.crm.qa.base.TestBase;
 
 import cucumber.api.DataTable;
+import gherkin.formatter.model.Result;
 
 public class DealsPage extends TestBase {
 	
@@ -64,34 +67,11 @@ public class DealsPage extends TestBase {
 		for (Map<String, String> details : dealDetails.asMaps(String.class, String.class)) 	{
 			title.sendKeys(details.get("Title"));
 			Description.sendKeys(details.get("Description"));
-//			statusDrpdown.click();
-//			Active.click();
-//			tags.sendKeys(details.get("tags"));
-//			tags.sendKeys(Keys.ENTER);
 			dealsSaveButton.click();
 			Thread.sleep(2000);
-			//if(TestUtil.isEnabled(dealsLink)) {
-//				Actions act = new Actions(driver);
-//				act.moveToElement(dealsLink).build().perform();
 			dealsLink.click();
-//				JavascriptExecutor js = (JavascriptExecutor)driver;
-//				js.executeScript("arguments[0].click();", dealsLink);
-//			}
-//			else {
-//				System.out.println("Failed to click on deals link");
-//			}
-//			System.out.println("Button clicked");
-//			Thread.sleep(1000);
-//			if(TestUtil.isEnabled(dealsNewButton)){
 				dealsNewButton.click();
-////				JavascriptExecutor js = (JavascriptExecutor)driver;
-////				js.executeScript("arguments[0].click();", dealsNewButton);
-//			}
-//				else {
-//				System.out.println("Failed to click on new deals link");
-//			}
 		}
-		
 	}
 
 }

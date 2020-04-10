@@ -1,6 +1,9 @@
 package com.qa.crm.testcases;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
 import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
@@ -19,7 +22,7 @@ public class LoginPageTest extends TestBase {
 		super();
 	}
 	
-	@Before
+	@BeforeTest
 	public void setUp() {
 		initialisation();
 		loginPage= new LoginPage();
@@ -40,7 +43,7 @@ public class LoginPageTest extends TestBase {
 		homePage = loginPage.logintoFreeCRM(prop.getProperty("email"), prop.getProperty("pwd"));
 	}
 	
-	@After
+	@AfterTest
 	public void tearDown() {
 		driver.quit();
 	}

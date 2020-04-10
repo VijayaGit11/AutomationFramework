@@ -26,7 +26,7 @@ public class ExtentReportListener extends TestBase {
 	}
 	
 	@AfterMethod
-	public void tearDown(ITestResult result) throws IOException {
+	public static void tearDowns(ITestResult result) throws IOException {
 		if(result.getStatus()==ITestResult.FAILURE) {
 			String temp = TestUtil.takeScreensotAtEndOfTest(driver);
 			logger.fail(result.getThrowable().getMessage()+ MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
