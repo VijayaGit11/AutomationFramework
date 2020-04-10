@@ -46,7 +46,7 @@ public class TestBase {
 	@BeforeClass
 	public void setUpSuite(String report_) {
 		System.out.println("Started");
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/Reports/" + report_ + System.currentTimeMillis()+".html");
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter(new File(System.getProperty("user.dir") + "/Reports/" + report_ + System.currentTimeMillis()+".html"));
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 	}
