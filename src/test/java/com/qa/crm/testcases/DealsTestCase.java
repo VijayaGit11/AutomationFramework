@@ -70,6 +70,6 @@ public class DealsTestCase extends TestBase {
 	
 	@After
 	public void User_Closes_The_Report() throws IOException {
-		DealsPage.tearDownReport();
+		TestBase.tearDown_Report();
 	}
 }

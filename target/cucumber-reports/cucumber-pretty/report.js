@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 39278981900,
+  "duration": 29820441800,
   "status": "passed"
 });
 formatter.scenario({
@@ -55,18 +55,18 @@ formatter.match({
   "location": "DealsTestCase.user_moves_to_new_deals_page()"
 });
 formatter.result({
-  "duration": 8862598600,
+  "duration": 16295556300,
   "status": "passed"
 });
 formatter.match({
   "location": "DealsTestCase.user_enters_deals_details(DataTable)"
 });
 formatter.result({
-  "duration": 15082969300,
+  "duration": 18444586300,
   "status": "passed"
 });
 formatter.after({
-  "duration": 1892889800,
+  "duration": 2687319400,
   "status": "passed"
 });
 });

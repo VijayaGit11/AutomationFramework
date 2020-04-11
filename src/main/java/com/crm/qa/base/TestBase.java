@@ -11,9 +11,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.ITestResult;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.qa.crm.util.TestUtil;
 import com.qa.crm.util.WebEventListener;
@@ -39,33 +41,19 @@ public class TestBase {
 		}
 }
 	
-<<<<<<< HEAD
-	public void setUpSuite(String TestCaseName) {
-		System.out.println("Deal Test Started");
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter(new File(System.getProperty("user.dir") + "/Reports/FreeCRM_" + TestUtil.getCurrentDateTime()+".html"));
-=======
-	public void setUpSuite(String report_) {
+	public static void setUpSuite(String TestCaseName) {
 		System.out.println("Started");
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter(new File(System.getProperty("user.dir") + "/Reports/" + report_ + System.currentTimeMillis()+".html"));
->>>>>>> aabe8f81b0bb9dfcbb886e2830c11000cf3a7b24
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter(new File(System.getProperty("user.dir") + "/Reports/FreeCRM_" + TestUtil.getCurrentDateTime()+".html"));
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		logger = extent.createTest(TestCaseName);
 	}
 	
-<<<<<<< HEAD
 
-	public static void tearDownReport() throws IOException {
-	//	public static void tearDownReport(ITestResult result) throws IOException {
+	public static void tearDown_Report() throws IOException {
 //		if(result.getStatus()==ITestResult.FAILURE) {
 //			logger.fail(result.getThrowable().getMessage()+ MediaEntityBuilder.createScreenCaptureFromPath(TestUtil.takeScreensotAtEndOfTest(driver)).build());
 //		}
-=======
-	public void tearDown(ITestResult result) throws IOException {
-		if(result.getStatus()==ITestResult.FAILURE) {
-			logger.fail(result.getThrowable().getMessage()+ MediaEntityBuilder.createScreenCaptureFromPath(TestUtil.takeScreensotAtEndOfTest(driver)).build());
-		}
->>>>>>> aabe8f81b0bb9dfcbb886e2830c11000cf3a7b24
 		extent.flush();
 	}
 	
