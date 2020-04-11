@@ -43,7 +43,6 @@ public class TestBase {
 		}
 }
 	
-	@BeforeSuite
 	public void setUpSuite(String report_) {
 		System.out.println("Started");
 		ExtentHtmlReporter reporter = new ExtentHtmlReporter(new File(System.getProperty("user.dir") + "/Reports/" + report_ + System.currentTimeMillis()+".html"));
@@ -51,7 +50,6 @@ public class TestBase {
 		extent.attachReporter(reporter);
 	}
 	
-	@AfterMethod
 	public void tearDown(ITestResult result) throws IOException {
 		if(result.getStatus()==ITestResult.FAILURE) {
 			logger.fail(result.getThrowable().getMessage()+ MediaEntityBuilder.createScreenCaptureFromPath(TestUtil.takeScreensotAtEndOfTest(driver)).build());
