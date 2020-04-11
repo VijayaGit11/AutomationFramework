@@ -39,20 +39,33 @@ public class TestBase {
 		}
 }
 	
+<<<<<<< HEAD
 	public void setUpSuite(String TestCaseName) {
 		System.out.println("Deal Test Started");
 		ExtentHtmlReporter reporter = new ExtentHtmlReporter(new File(System.getProperty("user.dir") + "/Reports/FreeCRM_" + TestUtil.getCurrentDateTime()+".html"));
+=======
+	public void setUpSuite(String report_) {
+		System.out.println("Started");
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter(new File(System.getProperty("user.dir") + "/Reports/" + report_ + System.currentTimeMillis()+".html"));
+>>>>>>> aabe8f81b0bb9dfcbb886e2830c11000cf3a7b24
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		logger = extent.createTest(TestCaseName);
 	}
 	
+<<<<<<< HEAD
 
 	public static void tearDownReport() throws IOException {
 	//	public static void tearDownReport(ITestResult result) throws IOException {
 //		if(result.getStatus()==ITestResult.FAILURE) {
 //			logger.fail(result.getThrowable().getMessage()+ MediaEntityBuilder.createScreenCaptureFromPath(TestUtil.takeScreensotAtEndOfTest(driver)).build());
 //		}
+=======
+	public void tearDown(ITestResult result) throws IOException {
+		if(result.getStatus()==ITestResult.FAILURE) {
+			logger.fail(result.getThrowable().getMessage()+ MediaEntityBuilder.createScreenCaptureFromPath(TestUtil.takeScreensotAtEndOfTest(driver)).build());
+		}
+>>>>>>> aabe8f81b0bb9dfcbb886e2830c11000cf3a7b24
 		extent.flush();
 	}
 	
